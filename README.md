@@ -38,9 +38,9 @@ Le das a Claude Code un artículo, noticia, o tema, y el skill va a:
 - 🎨 **Sistema de diseño consistente** — colores, tipografía y layouts predefinidos
 - 📐 **Formato 4:5 optimizado** para el feed de Instagram (1080x1350)
 - 🔄 **Exportación multi-escala** — x1 para TikTok, x3 para Instagram, PDF para revisión
-- ✍️ **Copy adaptado por plataforma** — hashtags en IG, 150 chars en TikTok, profesional en LinkedIn
+- ✍️ **Copy adaptado por plataforma** — hashtags en IG, 150 caracteres en TikTok, profesional en LinkedIn
 - 🔐 **Credenciales seguras** — manejadas con variables de entorno, nunca hardcoded
-- 🌎 **Multi-cuenta** — soporta cuentas separadas (ej: marca vs personal)
+- 🌎 **Multi-cuenta** — soporta cuentas separadas (ejemplo: marca vs personal)
 
 ---
 
@@ -55,19 +55,19 @@ Le das a Claude Code un artículo, noticia, o tema, y el skill va a:
 
 ## 🚀 Instalación
 
-### 1. Cloná el repo en tu carpeta de skills
+### 1. Clona el repo en tu carpeta de skills
 
 ```bash
 git clone https://github.com/stivenrosales/pencil-ig-carousel.git ~/.claude/skills/pencil-ig-carousel
 ```
 
-### 2. Configurá tus credenciales de Buffer
+### 2. Configura tus credenciales de Buffer
 
-Creá el archivo `~/.claude/.env.skills`:
+Crea el archivo `~/.claude/.env.skills`:
 
 ```bash
 # Buffer API — Cuenta principal (Instagram + TikTok)
-export BUFFER_API_KEY_PRIMARY="tu-api-key-aca"
+export BUFFER_API_KEY_PRIMARY="tu-api-key-aqui"
 export BUFFER_CHANNEL_IG="tu-channel-id-de-instagram"
 export BUFFER_CHANNEL_TIKTOK="tu-channel-id-de-tiktok"
 
@@ -76,41 +76,41 @@ export BUFFER_API_KEY_SECONDARY="tu-api-key-de-linkedin"
 export BUFFER_CHANNEL_LINKEDIN="tu-channel-id-de-linkedin"
 ```
 
-Configurá los permisos del archivo:
+Configura los permisos del archivo:
 
 ```bash
 chmod 600 ~/.claude/.env.skills
 ```
 
-### 3. Cargá las credenciales en tu shell
+### 3. Carga las credenciales en tu shell
 
-Agregá esta línea a tu `~/.zshrc` (o `~/.bashrc`):
+Agrega esta línea a tu `~/.zshrc` (o `~/.bashrc`):
 
 ```bash
 [ -f ~/.claude/.env.skills ] && source ~/.claude/.env.skills
 ```
 
-Después abrí una terminal nueva o corré `source ~/.zshrc`.
+Después abre una terminal nueva o ejecuta `source ~/.zshrc`.
 
-### 4. Obtené tus credenciales de Buffer
+### 4. Obtén tus credenciales de Buffer
 
-1. Entrá a [publish.buffer.com](https://publish.buffer.com) y logueate
-2. Generá una API key en **Settings → Developer**
-3. Usá la query GraphQL que está en el SKILL.md ("Step 1: Get organization and channels") para encontrar los channel IDs de cada red social
+1. Entra a [publish.buffer.com](https://publish.buffer.com) e inicia sesión
+2. Genera una API key en **Settings → Developer**
+3. Usa la query GraphQL que está en el SKILL.md ("Step 1: Get organization and channels") para encontrar los channel IDs de cada red social
 
-### 5. Verificá el setup
+### 5. Verifica el setup
 
 ```bash
 echo $BUFFER_API_KEY_PRIMARY
 ```
 
-Si ves tu key, ya está listo. Si está vacío, revisá que abriste una terminal nueva después de editar `.zshrc`.
+Si ves tu key, ya está listo. Si está vacío, revisa que hayas abierto una terminal nueva después de editar `.zshrc`.
 
 ---
 
 ## 💡 Cómo usarlo
 
-En Claude Code, abrí un archivo `.pen` en Pencil y pedile:
+En Claude Code, abre un archivo `.pen` en Pencil y pídele:
 
 ```
 Crea un carrusel de Instagram sobre [tu tema] usando el skill pencil-ig-carousel
@@ -127,7 +127,7 @@ Claude Code va a:
 
 ## 🎨 Sistema de diseño
 
-El skill usa un sistema de diseño predefinido (colores, tipografía, espaciado) pensado para carruseles de alto engagement. Podés personalizarlo editando `SKILL.md` directamente.
+El skill usa un sistema de diseño predefinido (colores, tipografía, espaciado) pensado para carruseles de alto engagement. Puedes personalizarlo editando `SKILL.md` directamente.
 
 | Elemento | Slide claro | Slide oscuro |
 |----------|-------------|--------------|
@@ -148,22 +148,22 @@ El skill adapta automáticamente el caption según la plataforma:
 |------------|------|--------|----------|
 | 📸 **Instagram** | Casual, con emojis | Sin límite | ✅ Permitidos |
 | 🎵 **TikTok** | Directo y corto | 150 caracteres | ✅ Incluidos en el límite |
-| 💼 **LinkedIn** | Profesional, valor de negocio | Sin límite | ❌ No (o máx 3) |
+| 💼 **LinkedIn** | Profesional, valor de negocio | Sin límite | ❌ No (o máximo 3) |
 
 ---
 
 ## 🔒 Seguridad
 
 - El archivo `~/.claude/.env.skills` debe tener permisos `600`
-- **Nunca commitees ese archivo** — ya está en el `.gitignore`
-- Si usás un repo de dotfiles, agregá `.env.skills` a su lista de ignorados
+- **Nunca hagas commit de ese archivo** — ya está en el `.gitignore`
+- Si usas un repo de dotfiles, agrega `.env.skills` a su lista de ignorados
 - Las credenciales nunca salen de tu máquina local
 
 ---
 
 ## 🤝 Contribuir
 
-Los issues y PRs son bienvenidos. Si extendés el sistema de diseño o agregás integraciones con otras plataformas, abrí un PR.
+Los issues y PRs son bienvenidos. Si extiendes el sistema de diseño o agregas integraciones con otras plataformas, abre un PR.
 
 ---
 
@@ -185,6 +185,6 @@ Hecho por [@stivenrosales](https://github.com/stivenrosales)
 
 <div align="center">
 
-**¿Te sirvió este skill?** ⭐ Dale una estrella al repo y compartilo con otros creadores.
+**¿Te sirvió este skill?** ⭐ Dale una estrella al repo y compártelo con otros creadores.
 
 </div>
